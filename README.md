@@ -28,9 +28,9 @@ IDEnä voit käyttää esimerkiksi IntelliJ:tä (ilmainen kokeiluversio https://
   * https://www.wildfly.org/downloads/
   * Pura ladattu zip
   * Kokeile käynnistää serveri sen juuresta hakemistosta /bin standalone.sh tai standalone.bat skriptilla (suosittelen ajoa komentoriviltä)
-  * serverin pitäisi vastata käynnistyksen jälkeen localhost:8080 osoitteessa
-  * serveri saa suljettua ctrl/cmd + c komentorivillä tai shutdown skriptilla /bin kansiosta
-3. Vaihtoehto B: Docker
+  * serverin pitäisi vastata käynnistyksen jälkeen http://localhost:8080 osoitteessa
+  * serverin saa suljettua ctrl/cmd + c komentorivillä tai shutdown skriptilla /bin kansiosta
+3. Vaihtoehto B: Docker (suositus)
   * Asenna docker: https://www.docker.com/
 
 # Kääntäminen (projektikansion juuressa)
