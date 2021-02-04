@@ -65,7 +65,7 @@ Tämä luo ajettavan tiedoston projektin juureen: target/ping.war
 5. Lisää sovelluksen käynnistymiseen muutaman testiobjektin luonti luodulle entiteetille   
 6. Luo HTTP rajapinta, joka listaa kaikki kannassa olevat luomasi rivit
 7. Luo HTTP rajapinta, joka vie kumpaankin tauluun yhden uuden objektin. 
-   * Huolehdi, että operaatiolla on transaktio
+   * Huolehdi, että operaatiolle luodaan uusi transaktio
 8. Muuta /ping/resources/ping/{nimi} rajapinta palauttamaan tekstiä Jsonin tilalla
 9. Lisää luomallesi resurssille testi osaksi health checkkiä 
    * http://localhost:9990/health
