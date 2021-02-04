@@ -52,7 +52,8 @@ Tämä luo ajettavan tiedoston projektin juureen: target/ping.war
 ### Vaihtoehto B: Docker
 
 1. Mac/Linux: aja projektin juuresta buildAndRunDocker.sh
-  * Applikaation tulisi vastata nyt osoitteessa http://localhost:8080/ping/resources/test   
+  * Applikaation tulisi vastata nyt osoitteessa http://localhost:8080/ping/resources/test  
+  * HUOM! Kantana käytetään muistissa olevaa kantaa, joka resetoituu joka käynnistyksellä
 2. Windows: ks. kommennot ylläolevasta skriptistä ja luo niistä oma .bat tai aja komentorivillä
 
 # Tehtävät
@@ -64,8 +65,8 @@ Tämä luo ajettavan tiedoston projektin juureen: target/ping.war
 4. Luo vapaavalintainen entiteetti ja sille perus tietokantaoperaatiot
 5. Lisää sovelluksen käynnistymiseen muutaman testiobjektin luonti luodulle entiteetille   
 6. Luo HTTP rajapinta, joka listaa kaikki kannassa olevat luomasi rivit
-7. Luo HTTP rajapinta, joka vie kumpaankin tauluun yhden uuden objektin. 
-   * Huolehdi, että operaatiolle luodaan uusi transaktio
+7. Luo HTTP rajapinta, joka vie kumpaankin tauluun (Pong tauluun ja luomaasi) yhden uuden objektin. 
+   * Huolehdi, että operaatiolle luodaan aina uusi transaktio (vinkki container managed transactions)
 8. Muuta /ping/resources/ping/{nimi} rajapinta palauttamaan tekstiä Jsonin tilalla
 9. Lisää luomallesi resurssille testi osaksi health checkkiä 
    * http://localhost:9990/health
