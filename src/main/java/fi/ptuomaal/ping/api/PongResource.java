@@ -23,4 +23,11 @@ public class PongResource {
     public List<Pong> ping(@PathParam("name") String name) {
         return service.getPongs(name);
     }
+
+    @GET
+    @Path("/id/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Pong getPong(@PathParam("id") Long id) {
+        return service.getPong(id);
+    }
 }

@@ -52,4 +52,7 @@ public class PongService {
     }
 
 
+    public Pong getPong(Long id) {
+        return repository.findById(id);
+    }
 }

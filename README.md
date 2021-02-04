@@ -6,11 +6,10 @@ Tukimateriaali esimerkiksi täällä https://eclipse-ee4j.github.io/jakartaee-tu
 Harjoituksessa käytetään seuraavia JakartaEE ominaisuuksia:
   * JAX-RS
   * EJB
-  * JPA
+  * JPA 
 
 Lisäksi harjoituksessä käytetään seuraavia Microprofilen ominaisuuksia:
   * Config
-  * Health
 
 Käytä harjoitukseen 2-4h ja palauta se esim. githubin kautta tai muulla tavoin. Jos jokaista kohtaa et osaa/ymmärrä/ehdi, niin kuvaa lyhyesti miten olisit halunnut asian tehdä. Jos et pääse sisään projektin rakenteeseen, niin toteuta alla olevat 10 harjoitusta valitsemallasi ohjelmointikielellä
 
@@ -24,12 +23,11 @@ IDEnä voit käyttää esimerkiksi IntelliJ:tä (ilmainen kokeiluversio https://
   * https://maven.apache.org/download.cgi
   * Testaus komentorivilla: mvn -version
 3. Vaihtoehto A: Lokaaliymppäristö 
-  * Lataa ja pura Wildfly
-  * https://www.wildfly.org/downloads/
+  * Lataa Wildfly: https://www.wildfly.org/downloads/
   * Pura ladattu zip
-  * Kokeile käynnistää serveri sen juuresta hakemistosta /bin standalone.sh tai standalone.bat skriptilla (suosittelen ajoa komentoriviltä)
+  * Kokeile käynnistää serveri sen juuresta hakemistosta bin/ standalone.sh tai standalone.bat skriptilla (suosittelen ajoa komentoriviltä)
   * serverin pitäisi vastata käynnistyksen jälkeen http://localhost:8080 osoitteessa
-  * serverin saa suljettua ctrl/cmd + c komentorivillä tai shutdown skriptilla /bin kansiosta
+  * serverin saa suljettua ctrl/cmd + c komentorivillä tai shutdown skriptilla bin/ kansiosta
 3. Vaihtoehto B: Docker (suositus)
   * Asenna docker: https://www.docker.com/
 
@@ -60,15 +58,13 @@ Tämä luo ajettavan tiedoston projektin juureen: target/ping.war
 0. Kommentoi kunkin luokan alkuun minkä tulkitset sen tarkoitukseksi
 1. Luo testirajapinnan tervehdystekstiin toinen property, joka tulee osaksi vastausta   
 2. Muuta osoitteen http://localhost:8080/ping/resources/ping/{nimi} niin, että se kokeilee palauttaa nimen mukaisen tuloksen kannasta. Jos kannasta ei löydy tulosta, niin palautetaan kannan kaikki arvot
-3. Lisää HTTP rajapinnat uusien Pongien luonnille, päivittämiselle ja poistolle. 
+3. Lisää HTTP rajapinnat uusien Pongien luonnille ja poistolle. 
    * Käytä hyväksi esim. curlia tai postmania rajapintojen testaamisessa
-4. Luo vapaavalintainen entiteetti ja sille perus tietokantaoperaatiot
+4. Luo vapaavalintainen entiteetti ja sille pari muuttujaa. Tee yhden muuttujan perusteella kysely, joka palauttaa rivit, joissa muuttuja on annetun arvoinen
 5. Lisää sovelluksen käynnistymiseen muutaman testiobjektin luonti luodulle entiteetille   
 6. Luo HTTP rajapinta, joka listaa kaikki kannassa olevat luomasi rivit
 7. Luo HTTP rajapinta, joka vie kumpaankin tauluun (Pong tauluun ja luomaasi) yhden uuden objektin. 
    * Huolehdi, että operaatiolle luodaan aina uusi transaktio (vinkki container managed transactions)
-8. Muuta /ping/resources/ping/{nimi} rajapinta palauttamaan tekstiä Jsonin tilalla
-9. Lisää luomallesi resurssille testi osaksi health checkkiä 
-   * http://localhost:9990/health
-   * HUOM! huomaa, että porttinumero health checkissä on eri
-10. Jätä kommentti minkä koit haastavimmaksi tehtävässä ja kauanko suurinpiirtein käytit aikaa
+8. Muuta /ping/resources/ping/{nimi} rajapinta palauttamaan tekstiä JSONin tilalla
+9. Jätä kommentti minkä koit haastavimmaksi tehtävässä ja kauanko suurinpiirtein käytit aikaa
+10. Bonus: löydätkö koodista kohtia, jotka tulisi tehdä toisin?
