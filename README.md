@@ -63,8 +63,10 @@ Tämä luo ajettavan tiedoston projektin juureen: target/ping.war
 4. Luo vapaavalintainen entiteetti ja sille pari muuttujaa. Tee yhden muuttujan perusteella kysely, joka palauttaa rivit, joissa muuttuja on annetun arvoinen
 5. Lisää sovelluksen käynnistymiseen muutaman testiobjektin luonti luodulle entiteetille   
 6. Luo HTTP rajapinta, joka listaa kaikki kannassa olevat luomasi rivit
-7. Luo HTTP rajapinta, joka vie kumpaankin tauluun (Pong tauluun ja luomaasi) yhden uuden objektin. 
-   * Huolehdi, että operaatiolle luodaan aina uusi transaktio (vinkki container managed transactions)
-8. Muuta /ping/resources/ping/{nimi} rajapinta palauttamaan tekstiä JSONin tilalla
+7. Luo HTTP rajapinta, joka käyttää hyväksi aikaisemmin tekemääsi kyselyä entiteetin muuttujan perusteella
+   * annettu muuttujan arvo tulisi tulla rajapinnan parametrina
+   * palauta muuttujan arvolla löytyvät tulokset JSON muodossa   
+   * jos muuttujan arvolla ei tule tuloksia, niin palauta HTTP status 404
+8. Muuta /ping/resources/ping/{nimi} rajapinta palauttamaan responsen ContentTypenä text/html application/json tilalla
 9. Jätä kommentti minkä koit haastavimmaksi tehtävässä ja kauanko suurinpiirtein käytit aikaa
 10. Bonus: löydätkö koodista kohtia, jotka tulisi tehdä toisin?
