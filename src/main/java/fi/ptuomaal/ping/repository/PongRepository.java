@@ -7,6 +7,10 @@ import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+    PongRepository erottaa bisnesslogiikan tietokantakyselyistä 
+    tarjoamalla helposti ymmärrettäviä metodeja Pong entiteettien käsittelyyn.
+*/
 public class PongRepository {
 
     @PersistenceContext(unitName="ping")
@@ -17,6 +21,10 @@ public class PongRepository {
         return results;
     }
 
+    /*
+        Parannus ehdotus findByPongName(): 
+        Tämä haku kannattaisi tehdä tietokannassa suorituskyvyn parantamiseksi ja muistinkäytön vähentämiseksi.
+    */
     public List<Pong> findByPongName(String name) {
         List<Pong> tmp = findAll();
         List<Pong> results = new ArrayList<>();
@@ -32,6 +40,13 @@ public class PongRepository {
         return results;
     }
 
+    /*
+        Parannus ehdotus findById(): 
+        Tässä voisi käyttää myös nimettyä kyselyä.
+
+        Long -tyyppisen muuttajan liittämisessä kyselyyn ei liene sql injektion vaaraa, 
+        mutta olisi hyvä suosia tapaa, jossa muuttujien arvot liitetään kyselyyn turvallisesti, eikä suoraan merkkijonoja itse yhdistelemällä.
+    */
     public Pong findById(Long id) {
         return (Pong) entityManager.createNativeQuery("select * from pong where id=" + id, Pong.class).getSingleResult();
     }

@@ -3,12 +3,16 @@ package fi.ptuomaal.ping.service;
 import fi.ptuomaal.ping.entity.Pong;
 import fi.ptuomaal.ping.repository.PongRepository;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
+import javax.persistence.NoResultException;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.util.List;
 import java.util.logging.Logger;
 
+/*
+    PongService keskittää Pong entiteetteihin liittyvät operaatiot, eli ns. businesslogiikan.
+*/
 @Stateless
 public class PongService {
 
@@ -19,10 +23,17 @@ public class PongService {
     String message;
 
     @Inject
+    @ConfigProperty(name = "details")
+    String details;
+
+    @Inject
     PongRepository repository;
 
     public List<Pong> getPongs(String name) {
-        return repository.findAll();
+        List<Pong> results = repository.findByName(name);
+        if (results.isEmpty())
+                results = repository.findAll();
+        return results;
     }
 
     public void generateContent() {
@@ -37,7 +48,7 @@ public class PongService {
     }
 
     public String getResponseForTest() {
-        return message;
+        return message + " " + details;
     }
 
     public boolean testDbOperations() {
@@ -53,6 +64,23 @@ public class PongService {
 
 
     public Pong getPong(Long id) {
-        return repository.findById(id);
+        try {
+            return repository.findById(id);
+        }
+        catch (NoResultException e) {}
+        return null;
+    }
+
+    public Pong createPong(String name) {
+        return repository.create(name);
+    }
+
+    public boolean deletePong(Long id) {
+        try {
+            Pong pong = repository.findById(id);
+            return repository.delete(pong);
+        }
+        catch (NoResultException e) {}
+        return false;
     }
 }

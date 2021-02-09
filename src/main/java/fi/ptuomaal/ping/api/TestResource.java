@@ -11,6 +11,9 @@ import fi.ptuomaal.ping.service.PongService;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 
+/*
+    TestResource sisältää testirajapinnat
+*/
 @Path("test")
 public class TestResource {
 

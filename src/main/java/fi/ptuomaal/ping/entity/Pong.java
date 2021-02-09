@@ -2,6 +2,10 @@ package fi.ptuomaal.ping.entity;
 
 import javax.persistence.*;
 
+/*
+    Pong luokka määrittelee mallin (model).
+*/
+
 @Entity
 @NamedQueries({
         @NamedQuery
@@ -47,4 +51,9 @@ public class Pong {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() { 
+        return String.format("{" + this.id + ": " + this.name + "}"); 
+    } 
 }

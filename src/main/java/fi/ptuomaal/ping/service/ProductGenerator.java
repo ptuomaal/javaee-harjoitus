@@ -8,12 +8,12 @@ import javax.inject.Inject;
 @Startup
 @Singleton
 /*
-    PongGenerator luo sisältöä 
+    ProductGenerator luo sisältöä 
 */
-public class PongGenerator {
+public class ProductGenerator {
 
     @Inject
-    PongService service;
+    ProductService service;
 
     @PostConstruct
     public void init() {
