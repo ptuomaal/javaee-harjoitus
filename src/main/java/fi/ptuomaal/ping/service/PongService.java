@@ -25,6 +25,11 @@ public class PongService {
         return repository.findAll();
     }
 
+    public List<Pong> listPongs() {
+        return repository.findAll();
+    }
+
+
     public void generateContent() {
         if ( repository.findAll().isEmpty() ) {
             logger.info("Kanta on tyhjä, luodaan sinne muutama tulos");

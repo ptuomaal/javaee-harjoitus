@@ -70,3 +70,11 @@ Tämä luo ajettavan tiedoston projektin juureen: target/ping.war
 8. Muuta /ping/resources/ping/{nimi} rajapinta palauttamaan responsen ContentTypenä text/html application/json tilalla
 9. Jätä kommentti minkä koit haastavimmaksi tehtävässä ja kauanko suurinpiirtein käytit aikaa
 10. Bonus: löydätkö koodista kohtia, jotka tulisi tehdä toisin?
+
+# UI-tehtävät 
+Osoite /ping/resources/mvc/pongs/ listaa kannassa olevat pongit.
+
+11. Toteuta Pongien lisääminen
+12. Toteuta yksittäisen pongin poistaminen
+13. Toteuta javascriptilla lisäys sivun inputille validointi. Mikäli kenttä on tyhjä, tulisi siitä tulla ilmoitus 
+15. Lisää luomallesi entiteetille vapaamuotoinen UI
