@@ -76,5 +76,6 @@ Osoite /ping/resources/mvc/pongs/ listaa kannassa olevat pongit.
 
 11. Toteuta Pongien lisääminen
 12. Toteuta yksittäisen pongin poistaminen
-13. Toteuta javascriptilla lisäys sivun inputille validointi. Mikäli kenttä on tyhjä, tulisi siitä tulla ilmoitus 
+13. Toteuta javascriptilla lisäys sivun inputille validointi. Mikäli kenttä on tyhjä, tulisi siitä tulla ilmoitus
+14. Toteuta jonkinlainen tyylittely näkymissä käytetyille luokille (esim. taustaväri / padding muuttaminen)    
 15. Lisää luomallesi entiteetille vapaamuotoinen UI
