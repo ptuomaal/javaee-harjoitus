@@ -74,4 +74,13 @@ public class PongService {
     public Pong getPong(Long id) {
         return repository.findById(id);
     }
+
+    public Pong createPong(String name) {
+        return repository.create(name);
+    }
+
+    public void deleteById(Long id) {
+        // TODO: report proper error if pong is not found by ID
+        repository.delete(repository.findById(id));
+    }
 }
