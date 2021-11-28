@@ -26,10 +26,9 @@
         create(name);
     }
 
-    function create(data) {
-        fetch("/post/data/here", {
+    function create(name) {
+        fetch("/ping/resources/ping/" + name, {
             method: "POST",
-            body: JSON.stringify(data)
         }).then(res => {
             console.log("Request complete! response:", res);
         });
