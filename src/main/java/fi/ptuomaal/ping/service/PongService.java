@@ -25,6 +25,10 @@ public class PongService {
     String message;
 
     @Inject
+    @ConfigProperty(name = "message2")
+    String message2;
+
+    @Inject
     PongRepository repository;
 
     /**
@@ -52,7 +56,7 @@ public class PongService {
     }
 
     public String getResponseForTest() {
-        return message;
+        return message + " " + message2;
     }
 
     public boolean testDbOperations() {
