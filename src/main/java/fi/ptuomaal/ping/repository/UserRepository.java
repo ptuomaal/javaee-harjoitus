@@ -20,6 +20,10 @@ public class UserRepository {
         return results;
     }
 
+    public List<User> findByFirstName(String firstName) {
+        List<User> results = castUserList(entityManager.createNamedQuery(User.NAMED_QUERY_FIND_BY_FIRST_NAME).setParameter("firstName", firstName).getResultList());
+        return results;
+    }
 
     public User create(String firstName, String lastName) {
         User u = new User();
