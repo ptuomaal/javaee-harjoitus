@@ -12,6 +12,12 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import java.util.logging.Logger;
 
+/**
+ * Defines controller methods that can be used to:
+ * - get all Pongs from the database
+ * - get a Pong with a given ID from the database
+ * - create a new Pong in the database (currently not implemented)
+ */
 @Path("/mvc/")
 @Controller
 @RequestScoped

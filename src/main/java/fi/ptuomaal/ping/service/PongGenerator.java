@@ -5,6 +5,9 @@ import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.inject.Inject;
 
+/**
+ * Generates test content when the application starts (if the DB is empty).
+ */
 @Startup
 @Singleton
 public class PongGenerator {

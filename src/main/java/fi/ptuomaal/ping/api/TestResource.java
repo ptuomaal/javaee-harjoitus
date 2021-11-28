@@ -10,7 +10,9 @@ import fi.ptuomaal.ping.entity.Pong;
 import fi.ptuomaal.ping.service.PongService;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
-
+/**
+ * Defines the RESTful web service under path "test"
+ */
 @Path("test")
 public class TestResource {
 

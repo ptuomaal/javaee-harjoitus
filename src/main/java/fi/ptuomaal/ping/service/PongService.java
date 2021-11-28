@@ -9,6 +9,12 @@ import javax.inject.Inject;
 import java.util.List;
 import java.util.logging.Logger;
 
+/**
+ * Service-level class PongServices.
+ * Provides methods to list Pongs in the database and for testing the application,
+ * and a method for generating test content.
+ * Uses the PongRepository class to implement the database operations.
+ */
 @Stateless
 public class PongService {
 

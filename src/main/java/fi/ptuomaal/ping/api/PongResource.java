@@ -11,6 +11,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
+/**
+ * Defines the RESTful web service under path "ping"
+ */
 @Path("ping")
 public class PongResource {
 

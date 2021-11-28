@@ -7,6 +7,9 @@ import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Defines methods to query and update the Pong rows in the database.
+ */
 public class PongRepository {
 
     @PersistenceContext(unitName="ping")

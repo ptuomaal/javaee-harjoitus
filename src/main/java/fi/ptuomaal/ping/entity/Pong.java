@@ -2,6 +2,10 @@ package fi.ptuomaal.ping.entity;
 
 import javax.persistence.*;
 
+/**
+ * Defines the JPA entity class Pong.
+ * One Pong object corresponds to one row in the database.
+ */
 @Entity
 @NamedQueries({
         @NamedQuery
