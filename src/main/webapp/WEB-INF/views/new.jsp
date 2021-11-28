@@ -23,7 +23,11 @@
         console.log("Lisää painettu")
         let name = document.querySelector('[name="name-field"]').value
         console.log(name);
-        create(name);
+        if (name?.trim() !== "") {
+            create(name);
+        } else {
+            alert("Nimi on tyhjä!")
+        }
     }
 
     function create(name) {
