@@ -27,8 +27,12 @@ public class PongService {
     @Inject
     PongRepository repository;
 
+    /**
+     * Returns pongs with given name. If none are found, returns all pongs.
+     */
     public List<Pong> getPongs(String name) {
-        return repository.findAll();
+        List<Pong> byName = repository.findByName(name);
+        return byName.isEmpty() ? repository.findAll() : byName;
     }
 
     public List<Pong> listPongs() {
