@@ -13,7 +13,7 @@ public class PongRepository {
     EntityManager entityManager;
 
     public List<Pong> findAll() {
-        List<Pong> results = entityManager.createNamedQuery(Pong.NAMED_QUERY_GET_ALL).getResultList();
+        List<Pong> results = castPongList(entityManager.createNamedQuery(Pong.NAMED_QUERY_GET_ALL).getResultList());
         return results;
     }
 
@@ -28,7 +28,7 @@ public class PongRepository {
     }
 
     public List<Pong> findByName(String name) {
-        List<Pong> results = entityManager.createNamedQuery(Pong.NAMED_QUERY_FIND_BY_NAME).setParameter("name", name).getResultList();
+        List<Pong> results = castPongList(entityManager.createNamedQuery(Pong.NAMED_QUERY_FIND_BY_NAME).setParameter("name", name).getResultList());
         return results;
     }
 
@@ -58,7 +58,13 @@ public class PongRepository {
         return true;
     }
 
-
+    private static List<Pong> castPongList(List<?> li) {
+        List<Pong> list = new ArrayList<Pong>(li.size());
+        for (Object o: li) {
+          list.add((Pong) o);
+        }
+        return list;
+    }
 
 }
 
