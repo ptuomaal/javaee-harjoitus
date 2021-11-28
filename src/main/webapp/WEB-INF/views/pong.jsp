@@ -21,7 +21,7 @@
     </div>
 </c:if>
 <div>
-    <button>Poista</button>
+    <button onClick="deletePong()">Poista</button>
 </div>
 <a href="./">Takaisin alkuun</a>
 </div>
@@ -29,8 +29,14 @@
 <script type="application/javascript">
     function deletePong() {
         console.log("Poisto painettu")
-        let id = document.querySelector('[name="pong-id"]').value
+        let id = document.querySelector('[name="pong-id"]').textContent
         console.log(id);
+
+        fetch("/ping/resources/ping/id/" + id, {
+            method: "DELETE",
+        }).then(res => {
+            console.log("Request complete! response:", res);
+        });
     }
 </script>
 </body>
